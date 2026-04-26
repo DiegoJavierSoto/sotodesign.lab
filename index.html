@@ -4,9 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diego Javier Soto | Presencia digital con alma</title>
+    <title>PuntoCero | Lanzamientos digitales</title>
 
-    <!-- Fonts: Fraunces (display) + DM Sans (body) -->
     <link
         href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=DM+Sans:wght@400;500;600&display=swap"
         rel="stylesheet">
@@ -14,129 +13,105 @@
 
     <style>
         :root {
-            --theme-deep: #4a3629;
-            --theme-mid: #986a4e;
-            --theme-light: #f2eadf;
-            --theme-pale: #fbf9f6;
-            --text-dark: #2a2522;
-            --bg-card: #ffffff;
-            --nav-bg: rgba(251, 249, 246, 0.8);
-            --text-muted: #4b5563;
+            /* Neo-Digital Midnight Palette */
+            --theme-deep: #2dd4bf; /* Electric Teal */
+            --theme-mid: #818cf8;  /* Soft Violet */
+            --theme-light: #1e293b; /* Deep Navy */
+            --theme-pale: #0f172a;  /* Midnight Background */
+            --text-dark: #f1f5f9;  /* Off-white text */
+            --bg-card: rgba(30, 41, 59, 0.7); /* Translucent Navy */
+            --nav-bg: rgba(15, 23, 42, 0.8);
+            --text-muted: #94a3b8;
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --glass-border: rgba(45, 212, 191, 0.1);
         }
 
-        .dark-mode {
-            --theme-deep: #f2eadf;
-            --theme-mid: #c19a84;
-            --theme-light: #231b17;
-            --theme-pale: #1a1512;
-            --text-dark: #fbf9f6;
-            --bg-card: #2a2522;
-            --nav-bg: rgba(26, 21, 18, 0.85);
-            --text-muted: #9ca3af;
-        }
-
-        * {
-            box-sizing: border-box;
+        .light-mode {
+            /* Optional Light Mode for Neo-Digital (more like a "Paper" mode) */
+            --theme-deep: #0d9488;
+            --theme-mid: #4f46e5;
+            --theme-light: #f1f5f9;
+            --theme-pale: #ffffff;
+            --text-dark: #0f172a;
+            --bg-card: rgba(255, 255, 255, 0.8);
+            --nav-bg: rgba(255, 255, 255, 0.8);
+            --text-muted: #64748b;
+            --glass-border: rgba(13, 148, 136, 0.1);
         }
 
         body {
             font-family: 'DM Sans', sans-serif;
             background-color: var(--theme-pale);
             color: var(--text-dark);
-            overflow-x: hidden;
-            transition: background-color 0.4s ease, color 0.4s ease;
-        }
-
-        /* Dark mode overrides for Tailwind utilities */
-        .dark-mode .text-gray-600 {
-            color: var(--text-muted) !important;
-        }
-
-        .dark-mode .text-gray-500 {
-            color: var(--text-muted) !important;
-        }
-
-        .dark-mode .text-gray-400 {
-            color: var(--text-muted) !important;
-        }
-
-        .dark-mode .bg-white {
-            background-color: var(--bg-card) !important;
-        }
-
-        .dark-mode .text-amber-200 {
-            color: var(--theme-mid) !important;
-            opacity: 0.8;
+            transition: background-color 0.5s ease, color 0.5s ease;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(45, 212, 191, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(129, 140, 248, 0.05) 0%, transparent 40%);
+            background-attachment: fixed;
         }
 
         h1,
         h2,
-        h3,
-        .serif {
+        h3 {
             font-family: 'Fraunces', serif;
         }
 
-        /* ── FADE-IN ON LOAD ── */
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(28px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .btn {
+            background: var(--theme-deep);
+            color: #0f172a;
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-weight: 700;
+            transition: var(--transition);
+            box-shadow: 0 0 20px rgba(45, 212, 191, 0.2);
         }
 
-        .fade-up {
-            animation: fadeUp 0.7s ease both;
+        .btn:hover {
+            background: #ffffff;
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(45, 212, 191, 0.4);
         }
 
-        .delay-1 {
-            animation-delay: 0.1s;
+        .btn-outline {
+            border: 2px solid var(--theme-deep);
+            color: var(--theme-deep);
+            padding: 12px 26px;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: var(--transition);
         }
 
-        .delay-2 {
-            animation-delay: 0.25s;
+        .btn-outline:hover {
+            background: var(--theme-deep);
+            color: #0f172a;
         }
 
-        .delay-3 {
-            animation-delay: 0.4s;
+        /* Glassmorphism Components */
+        .glass-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
         }
 
-        .delay-4 {
-            animation-delay: 0.55s;
-        }
-
-        /* ── SCROLL REVEAL ── */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.65s ease, transform 0.65s ease;
-        }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ── NAV ── */
         nav {
             background: var(--nav-bg);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(152, 106, 78, 0.12);
-            transition: background-color 0.4s ease;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--glass-border);
+            transition: var(--transition);
         }
 
-        /* ── DARK MODE TOGGLE ── */
+        /* Dark Mode Toggle (Reversed for Neo-Digital Default Dark) */
         .theme-toggle {
             cursor: pointer;
-            padding: 8px;
-            border-radius: 50%;
-            background: transparent;
-            border: 1px solid rgba(152, 106, 78, 0.15);
-            color: var(--text-dark);
+            padding: 10px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            color: var(--theme-deep);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -144,8 +119,8 @@
         }
 
         .theme-toggle:hover {
-            background: var(--theme-light);
-            transform: rotate(15deg);
+            background: rgba(45, 212, 191, 0.1);
+            transform: translateY(-2px);
         }
 
         .theme-toggle svg {
@@ -154,337 +129,97 @@
             fill: none;
             stroke: currentColor;
             stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
         }
 
-        .dark-mode .sun-icon {
-            display: block;
-        }
+        .sun-icon { display: block; }
+        .moon-icon { display: none; }
 
-        .dark-mode .moon-icon {
-            display: none;
-        }
+        .light-mode .sun-icon { display: none; }
+        .light-mode .moon-icon { display: block; }
 
-        .sun-icon {
-            display: none;
-        }
-
-        .moon-icon {
-            display: block;
-        }
-
-        /* ── BADGE ── */
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--bg-card);
-            border: 1px solid rgba(152, 106, 78, 0.2);
-            border-radius: 999px;
-            padding: 6px 16px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            color: var(--theme-mid);
-            margin-bottom: 20px;
-        }
-
-        .badge-dot {
-            width: 8px;
-            height: 8px;
-            background: var(--theme-mid);
-            border-radius: 50%;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-
-            0%,
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-
-            50% {
-                opacity: 0.5;
-                transform: scale(1.4);
-            }
-        }
-
-        /* ── HERO IMG FRAME ── */
-        .hero-frame {
-            position: relative;
-            border-radius: 24px;
-            box-shadow: 0 32px 64px rgba(74, 54, 41, 0.18);
-        }
-
-        .hero-frame img {
-            width: 100%;
-            height: 520px;
-            object-fit: cover;
-            display: block;
-            border-radius: 24px;
-        }
-
-        .hero-card {
-            position: absolute;
-            bottom: -20px;
-            left: -20px;
-            background: var(--bg-card);
-            padding: 18px 22px;
+        /* FAQ Accordion */
+        .accordion-item {
+            background: rgba(30, 41, 59, 0.4);
             border-radius: 16px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            margin-bottom: 12px;
+            border: 1px solid var(--glass-border);
+            transition: var(--transition);
         }
 
-        /* ── BUTTONS ── */
-        .btn-primary {
-            background: var(--theme-deep);
-            color: var(--theme-pale);
-            padding: 16px 32px;
-            border-radius: 14px;
+        .accordion-item:hover {
+            background: rgba(30, 41, 59, 0.6);
+            border-color: var(--theme-deep);
+        }
+
+        .accordion-header {
+            width: 100%;
+            padding: 22px 28px;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             font-weight: 600;
-            font-size: 1rem;
+            color: var(--text-dark);
+            background: transparent;
             border: none;
             cursor: pointer;
-            transition: background 0.2s, transform 0.2s, box-shadow 0.2s, color 0.2s;
-            box-shadow: 0 6px 20px rgba(74, 54, 41, 0.25);
         }
 
-        .btn-primary:hover {
-            background: var(--theme-mid);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 28px rgba(74, 54, 41, 0.3);
-        }
-
-        .btn-secondary {
-            background: var(--bg-card);
-            color: var(--text-dark);
-            padding: 16px 32px;
-            border-radius: 14px;
-            font-weight: 500;
-            font-size: 1rem;
-            border: 1px solid rgba(74, 54, 41, 0.15);
-            cursor: pointer;
-            transition: border-color 0.2s, transform 0.2s, background-color 0.4s;
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--theme-mid);
-            transform: translateY(-2px);
-        }
-
-        /* ── PAIN CARDS ── */
-        .pain-card {
-            background: var(--bg-card);
-            padding: 28px;
-            border-radius: 16px;
-            border-left: 4px solid var(--theme-mid);
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-            font-style: italic;
-            transition: transform 0.2s, box-shadow 0.2s, background-color 0.4s;
-        }
-
-        .pain-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-        }
-
-        /* ── TRANSFORM CARDS ── */
-        .before-card {
-            background: var(--bg-card);
-            padding: 36px;
-            border-radius: 20px;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
-            transition: background-color 0.4s ease;
-        }
-
-        .after-card {
-            background: var(--theme-deep);
-            color: var(--theme-pale);
-            padding: 36px;
-            border-radius: 20px;
-            box-shadow: 0 12px 32px rgba(74, 54, 41, 0.3);
-            transition: background-color 0.4s ease, color 0.4s ease;
-        }
-
-        .transform-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-        }
-
-        .transform-item:last-child {
-            border-bottom: none;
-        }
-
-        .after-card .transform-item {
-            border-bottom: 1px solid rgba(152, 106, 78, 0.12);
-        }
-
-        .after-card .transform-item:last-child {
-            border-bottom: none;
-        }
-
-        /* ── PROCESO STEPS ── */
-        .step-number {
-            width: 48px;
-            height: 48px;
-            background: var(--theme-deep);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Fraunces', serif;
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin: 0 auto 16px;
-            box-shadow: 0 4px 16px rgba(74, 54, 41, 0.3);
-        }
-
-        /* ── PORTFOLIO CARD ── */
-        .portfolio-card {
-            border-radius: 16px;
+        .accordion-content {
+            max-height: 0;
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s, background-color 0.4s;
-            background: var(--bg-card);
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 0 28px;
+            color: var(--text-muted);
         }
 
-        .portfolio-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+        .accordion-item.active .accordion-content {
+            max-height: 300px;
+            padding-bottom: 24px;
         }
 
-        .portfolio-img {
-            width: 100%;
-            height: 250px;
-            background: var(--theme-light);
-            position: relative;
-            overflow: hidden;
+        .accordion-item.active .chevron {
+            transform: rotate(180deg);
+            color: var(--theme-deep);
         }
 
-        .portfolio-img img {
-            width: 100%;
-            height: auto;
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            transition: transform 3.5s ease-in-out;
-            /* Scroll suave */
+        .chevron { transition: transform 0.3s ease; }
+
+        #logo-img {
+            height: 52px;
+            width: auto;
         }
 
-        .portfolio-overlay {
-            position: absolute;
-            inset: 0;
-            background: var(--nav-bg);
-            backdrop-filter: blur(8px);
-            color: var(--text-dark);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 24px;
-            text-align: center;
-            font-size: 0.95rem;
-            line-height: 1.6;
+        /* Animations */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
         }
 
-        .portfolio-card:hover .portfolio-img img {
-            transform: translateY(calc(-100% + 250px));
+        .float-anim {
+            animation: float 6s ease-in-out infinite;
         }
 
-        .portfolio-card:hover .portfolio-overlay {
-            opacity: 1;
-        }
-
-        .portfolio-info {
-            padding: 16px 20px;
-        }
-
-        /* ── TESTIMONIO ── */
-        .testimonial {
-            background: var(--bg-card);
-            border-radius: 24px;
-            padding: 48px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-            position: relative;
-            transition: background-color 0.4s ease;
-        }
-
-        .testimonial::before {
-            content: '"';
-            font-family: 'Fraunces', serif;
-            font-size: 8rem;
-            color: var(--theme-light);
-            position: absolute;
-            top: -20px;
-            left: 32px;
-            line-height: 1;
-        }
-
-        /* ── QUOTE CALLOUT ── */
-        .quote-callout {
-            border-left: 4px solid var(--theme-mid);
-            padding: 20px 28px;
-            background: var(--bg-card);
-            border-radius: 0 16px 16px 0;
-            font-style: italic;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-            transition: background-color 0.4s ease;
-        }
-
-        /* ── CTA SECTION ── */
-        .cta-section {
-            background: var(--theme-deep);
-            border-radius: 32px;
-            padding: 64px 48px;
-            color: var(--theme-pale);
-            text-align: center;
-            transition: background-color 0.4s ease, color 0.4s ease;
-        }
-
-        /* ── FOOTER ── */
-        footer {
-            background: #231b17;
-            color: white;
-        }
-
-        footer a:hover {
-            color: #86efac;
-        }
-
-        /* ── DIVIDER ── */
-        .leaf-divider {
-            text-align: center;
-            color: var(--theme-mid);
-            opacity: 0.3;
-            font-size: 1.5rem;
-            margin: 8px 0;
+        .text-gradient {
+            background: linear-gradient(135deg, var(--theme-deep) 0%, var(--theme-mid) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
     </style>
 </head>
 
 <body>
 
-    <!-- ══════════════ NAV ══════════════ -->
+    <!-- NAV -->
     <nav class="fixed top-0 w-full z-50">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-4">
-                <span class="font-bold text-lg" style="font-family:'Fraunces',serif;">Punto Cero</span>
-                <span class="hidden md:inline text-sm text-gray-500">· Presencia digital con alma</span>
+        <div class="max-w-6xl mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <img id="logo-img" src="img/punto_cero_tranparente_blanco.png" alt="PuntoCero Logo">
             </div>
-
+            
             <div class="flex items-center gap-6">
-                <!-- Dark Mode Toggle -->
                 <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
-                    <svg class="moon-icon" viewBox="0 0 24 24">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
                     <svg class="sun-icon" viewBox="0 0 24 24">
                         <circle cx="12" cy="12" r="5"></circle>
                         <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -496,341 +231,262 @@
                         <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
                 </button>
-
-                <button class="btn-primary" style="padding:10px 22px;font-size:0.9rem;border-radius:10px;">
-                    Agendar entrevista
-                </button>
+                <button class="btn">Agendar llamada</button>
             </div>
         </div>
     </nav>
 
-    <!-- ══════════════ HERO ══════════════ -->
-    <section class="pt-36 pb-28 px-6">
+    <!-- HERO -->
+    <section class="pt-48 pb-32 px-6 overflow-hidden">
         <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
 
-            <div>
-                <div class="badge fade-up">
-                    <span class="badge-dot"></span>
-                    Disponible para nuevos proyectos
+            <div class="relative z-10">
+                <div class="inline-block px-4 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-400 text-sm font-bold mb-6">
+                    Lanzamientos Digitales 2026
                 </div>
-
-                <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6 fade-up delay-1">
-                    De tu idea a <em style="color:var(--theme-mid);font-style:italic;">algo real</em>,<br>en pocos días
+                <h1 class="text-6xl font-bold mb-8 leading-tight">
+                    De tu idea a <span class="text-gradient italic">algo real</span>, en pocos días
                 </h1>
 
-                <p class="text-lg text-gray-600 mb-8 max-w-lg fade-up delay-2">
-                    Ayudo a profesionales a simplificar el caos tecnológico para que puedan enfocarse en lo que
-                    mejor saben hacer: acompañar personas.
+                <p class="text-xl text-muted mb-10 max-w-md leading-relaxed">
+                    Diseño y desarrollo páginas web claras y efectivas para que puedas ofrecer tus servicios online sin depender de lo técnico.
                 </p>
 
-                <div class="flex flex-wrap gap-4 fade-up delay-3">
-                    <button class="btn-primary">Empezar mi camino</button>
-                    <button class="btn-secondary">Ver cómo trabajo</button>
+                <div class="flex flex-wrap gap-6">
+                    <button class="btn px-10 py-4 text-lg">Empezar mi web</button>
+                    <button class="btn-outline px-10 py-4 text-lg">Ver ejemplos</button>
                 </div>
             </div>
 
-            <div class="hero-frame fade-up delay-4">
-                <!-- Reemplazá img/diego_5.png con tu foto real -->
-                <img src="img/diego_escitorio.png" alt="Diego Javier Soto" />
-
-                <div class="hero-card">
-                    <p class="font-semibold text-sm" style="color:var(--theme-deep);">Diseño Humano</p>
-                    <p class="text-xs text-gray-500 mt-1">Tecnología con alma</p>
+            <div class="relative">
+                <div class="absolute -top-20 -right-20 w-80 h-80 bg-teal-500/10 rounded-full blur-3xl"></div>
+                <div class="absolute -bottom-20 -left-20 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl"></div>
+                <div class="glass-card p-4 relative z-10 float-anim">
+                    <img src="img/diego_escitorio.png" class="rounded-xl w-full shadow-2xl" alt="Diego Javier Soto">
                 </div>
             </div>
 
         </div>
     </section>
 
-    <!-- ══════════════ PROBLEMA ══════════════ -->
-    <section class="py-20 px-6" style="background:var(--theme-light);">
+    <!-- PROBLEMA -->
+    <section class="py-32 px-6 bg-slate-900/50">
         <div class="max-w-5xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-12 reveal" style="font-family:'Fraunces',serif;">
-                Si esto te suena familiar…
-            </h2>
+            <h2 class="text-4xl font-bold mb-16 text-center">Si estás en esta situación…</h2>
 
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="pain-card reveal">"Tengo la idea pero no sé por dónde empezar"</div>
-                <div class="pain-card reveal" style="transition-delay:0.1s;">"Lo técnico me abruma y me quita energía"
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-card p-10 hover:border-teal-500/50 transition-colors">
+                    <div class="text-teal-400 text-4xl mb-6">“</div>
+                    <p class="text-lg italic text-slate-300">Tengo la idea pero no sé cómo llevarla a una web</p>
                 </div>
-                <div class="pain-card reveal" style="transition-delay:0.2s;">"El papel en blanco me paraliza"</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ══════════════ FILOSOFÍA ══════════════ -->
-    <section class="py-28 px-6">
-        <div class="max-w-4xl mx-auto text-center reveal">
-            <div class="leaf-divider mb-8">❦</div>
-            <h2 class="text-4xl font-bold mb-6" style="font-family:'Fraunces',serif;">
-                Trabajo con <em style="color:var(--theme-mid);">personas</em>,<br>no con proyectos
-            </h2>
-            <p class="text-gray-600 mb-4 text-lg max-w-2xl mx-auto">
-                Detrás de cada web hay una historia, una vocación y alguien que quiere ayudar.
-            </p>
-            <p class="text-gray-600 text-lg max-w-2xl mx-auto">
-                No vendo tecnología. Construyo puentes entre lo que sos y quienes te necesitan. Saco lo técnico del
-                medio para que tu esencia pueda mostrarse sin fricción.
-            </p>
-        </div>
-    </section>
-
-    <!-- ══════════════ TRANSFORMACIÓN ══════════════ -->
-    <section class="py-24 px-6" style="background:var(--theme-light);">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-12 reveal" style="font-family:'Fraunces',serif;">El antes y el
-                después</h2>
-
-            <div class="grid md:grid-cols-2 gap-8">
-
-                <div class="before-card reveal">
-                    <p class="text-red-400 font-semibold uppercase tracking-wide text-sm mb-6">Antes</p>
-                    <div class="transform-item">
-                        <span class="text-red-300 text-xl">✗</span>
-                        <span class="text-gray-600">Ideas sin orden ni estructura</span>
-                    </div>
-                    <div class="transform-item">
-                        <span class="text-red-300 text-xl">✗</span>
-                        <span class="text-gray-600">Bloqueo constante con lo técnico</span>
-                    </div>
-                    <div class="transform-item">
-                        <span class="text-red-300 text-xl">✗</span>
-                        <span class="text-gray-600">Invisibilidad profesional online</span>
-                    </div>
-                    <div class="transform-item">
-                        <span class="text-red-300 text-xl">✗</span>
-                        <span class="text-gray-600">Dependencia de Instagram o WhatsApp</span>
-                    </div>
+                <div class="glass-card p-10 hover:border-teal-500/50 transition-colors">
+                    <div class="text-teal-400 text-4xl mb-6">“</div>
+                    <p class="text-lg italic text-slate-300">Lo técnico me frena o me abruma</p>
                 </div>
-
-                <div class="after-card reveal" style="transition-delay:0.15s;">
-                    <p class="font-semibold uppercase tracking-wide text-sm mb-6" style="color:var(--theme-mid);">
-                        Después</p>
-                    <div class="transform-item">
-                        <span style="color:var(--theme-mid);" class="text-xl">✓</span>
-                        <span>Estructura clara y presencia funcionando</span>
-                    </div>
-                    <div class="transform-item">
-                        <span style="color:var(--theme-mid);" class="text-xl">✓</span>
-                        <span>Claridad total sobre tu mensaje</span>
-                    </div>
-                    <div class="transform-item">
-                        <span style="color:var(--theme-mid);" class="text-xl">✓</span>
-                        <span>Confianza para mostrarte al mundo</span>
-                    </div>
-                    <div class="transform-item">
-                        <span style="color:var(--theme-mid);" class="text-xl">✓</span>
-                        <span>Una web que trabaja mientras vos acompañás</span>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ══════════════ PROCESO ══════════════ -->
-    <section class="py-28 px-6">
-        <div class="max-w-5xl mx-auto text-center">
-            <h2 class="text-4xl font-bold mb-4 reveal" style="font-family:'Fraunces',serif;">Un camino simple</h2>
-            <p class="text-gray-500 mb-16 reveal">Sin vueltas, sin tecnicismos. Así funciona.</p>
-
-            <div class="grid md:grid-cols-3 gap-12">
-                <div class="reveal">
-                    <div class="step-number">1</div>
-                    <h3 class="text-xl font-bold mb-3" style="font-family:'Fraunces',serif;">Hablamos</h3>
-                    <p class="text-gray-600">Entiendo tu idea, tu vocación y lo que querés lograr. Sin formularios, sin
-                        presión.</p>
-                </div>
-                <div class="reveal" style="transition-delay:0.12s;">
-                    <div class="step-number">2</div>
-                    <h3 class="text-xl font-bold mb-3" style="font-family:'Fraunces',serif;">Organizamos</h3>
-                    <p class="text-gray-600">Le damos forma clara. Ordenamos todo en un plan concreto y sin sorpresas.
-                    </p>
-                </div>
-                <div class="reveal" style="transition-delay:0.24s;">
-                    <div class="step-number">3</div>
-                    <h3 class="text-xl font-bold mb-3" style="font-family:'Fraunces',serif;">Transformamos</h3>
-                    <p class="text-gray-600">Lo hacemos realidad en pocos días. Tu presencia online, funcionando.</p>
+                <div class="glass-card p-10 hover:border-teal-500/50 transition-colors">
+                    <div class="text-teal-400 text-4xl mb-6">“</div>
+                    <p class="text-lg italic text-slate-300">Dependo solo de Instagram o WhatsApp</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ══════════════ PORTFOLIO ══════════════ -->
-    <section class="py-24 px-6" style="background:var(--theme-light);">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-4 reveal" style="font-family:'Fraunces',serif;">Ideas
-                materializadas</h2>
-            <p class="text-center text-gray-500 mb-14 reveal">Proyectos reales de profesionales del bienestar</p>
-
-            <div class="grid md:grid-cols-3 gap-6">
-
-                <!-- Proyecto 1: reemplazá con screenshot real -->
-                <div class="portfolio-card reveal">
-                    <div class="portfolio-img">
-                        <img src="img/web_silvina_3.png" alt="Web Coach"
-                            onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:200px;background:#e2eddb;color:var(--theme-mid);font-size:0.85rem;\'>📸 Web de Coach</div>'" />
-                        <div class="portfolio-overlay">
-                            Desarrollo integral de marca personal. Diseño centrado en transmitir calma y
-                            profesionalismo. <br><br>
-                            <span class="text-xs opacity-80 italic">(Identidad protegida para preservar la
-                                privacidad)</span>
-                        </div>
-                    </div>
-                    <div class="portfolio-info">
-                        <p class="font-semibold text-sm">Web personal · Coach</p>
-                        <p class="text-xs text-gray-500 mt-1">De idea desordenada a presencia clara en días</p>
-                    </div>
-                </div>
-
-                <!-- Proyecto 2 -->
-                <div class="portfolio-card reveal" style="transition-delay:0.1s;">
-                    <div class="portfolio-img">
-                        <img src="img/Landing_1.jpg" alt="Landing Taller de Bienestar"
-                            onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:200px;background:#e2eddb;color:var(--theme-mid);font-size:0.85rem;\'>📸 Landing de Taller</div>'" />
-                        <div class="portfolio-overlay">
-                            Estructura 100% optimizada para la conversión. Copywriting y diseño enfocados en maximizar
-                            inscripciones.
-                        </div>
-                    </div>
-                    <div class="portfolio-info">
-                        <p class="font-semibold text-sm">Landing page · Taller de Bienestar</p>
-                        <p class="text-xs text-gray-500 mt-1">Diseñada para convertir interesados en alumnos inscriptos
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Proyecto 3 -->
-                <div class="portfolio-card reveal" style="transition-delay:0.2s;">
-                    <div class="portfolio-img">
-                        <img src="img/landing_virginia.png" alt="Web Psicóloga"
-                            onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:200px;background:#e2eddb;color:var(--theme-mid);font-size:0.85rem;\'>📸 Web de Psicóloga</div>'" />
-                        <div class="portfolio-overlay">
-                            Sitio institucional con enfoque terapéutico. Pensado para generar confianza pura desde el
-                            primer clic del paciente. <br><br>
-                            <span class="text-xs opacity-80 italic">(Identidad protegida para preservar la
-                                privacidad)</span>
-                        </div>
-                    </div>
-                    <div class="portfolio-info">
-                        <p class="font-semibold text-sm">Web profesional · Psicóloga</p>
-                        <p class="text-xs text-gray-500 mt-1">Aumentando visibilidad y llegando a más pacientes de
-                            manera digital</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ══════════════ TESTIMONIO ══════════════ -->
-    <section class="py-28 px-6">
+    <!-- SOLUCIÓN -->
+    <section class="py-40 px-6 text-center relative">
         <div class="max-w-3xl mx-auto">
-            <div class="testimonial reveal">
-                <p class="text-xl text-gray-700 mb-6 relative z-10"
-                    style="font-family:'Fraunces',serif;font-style:italic;">
-                    Ahora tengo claridad y una web funcionando. Dejé de sentir que internet era un problema y empecé a
-                    sentirlo como una oportunidad.
-                </p>
-                <p class="font-semibold" style="color:var(--theme-deep);">— Cliente real</p>
-                <p class="text-sm text-gray-400">Coach · Argentina</p>
+            <h2 class="text-5xl font-bold mb-10 leading-tight">Una forma <span class="text-teal-400">simple</span> de lanzar tu web</h2>
+            <p class="text-2xl text-muted mb-8 font-light">No necesitás aprender tecnología ni resolver mil detalles técnicos.</p>
+            <div class="h-1 w-20 bg-teal-500 mx-auto rounded-full mb-10"></div>
+            <p class="text-xl text-slate-200">Me encargo de diseñar y desarrollar una página clara, profesional y lista para usar.</p>
+        </div>
+    </section>
+
+    <!-- PROCESO -->
+    <section class="py-32 px-6 bg-slate-900/80">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-20">Cómo funciona</h2>
+
+            <div class="grid md:grid-cols-4 gap-12">
+                <div class="space-y-6 group">
+                    <div class="w-16 h-16 bg-teal-500/10 border border-teal-500/30 text-teal-400 rounded-2xl flex items-center justify-center mx-auto text-2xl font-black group-hover:bg-teal-500 group-hover:text-slate-950 transition-all duration-500">1</div>
+                    <p class="font-bold text-lg">Entendemos tu idea</p>
+                </div>
+                <div class="space-y-6 group">
+                    <div class="w-16 h-16 bg-teal-500/10 border border-teal-500/30 text-teal-400 rounded-2xl flex items-center justify-center mx-auto text-2xl font-black group-hover:bg-teal-500 group-hover:text-slate-950 transition-all duration-500">2</div>
+                    <p class="font-bold text-lg">Definimos estructura</p>
+                </div>
+                <div class="space-y-6 group">
+                    <div class="w-16 h-16 bg-teal-500/10 border border-teal-500/30 text-teal-400 rounded-2xl flex items-center justify-center mx-auto text-2xl font-black group-hover:bg-teal-500 group-hover:text-slate-950 transition-all duration-500">3</div>
+                    <p class="font-bold text-lg">Diseño y desarrollo</p>
+                </div>
+                <div class="space-y-6 group">
+                    <div class="w-16 h-16 bg-teal-500/10 border border-teal-500/30 text-teal-400 rounded-2xl flex items-center justify-center mx-auto text-2xl font-black group-hover:bg-teal-500 group-hover:text-slate-950 transition-all duration-500">4</div>
+                    <p class="font-bold text-lg">Publicación</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ══════════════ QUOTE CALLOUT ══════════════ -->
-    <div class="px-6 pb-20 max-w-3xl mx-auto reveal">
-        <div class="quote-callout">
-            No necesitás más herramientas. Necesitás claridad, estructura y alguien que te acompañe a hacerlo real.
-        </div>
-    </div>
+    <!-- CASO -->
+    <section class="py-40 px-6">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-12">Un caso real</h2>
+            <p class="text-xl text-muted mb-16 max-w-2xl mx-auto">En pocos días pasó de tener una idea desordenada a una página lista para ofrecer su servicio online.</p>
 
-    <!-- ══════════════ CTA FINAL ══════════════ -->
-    <section class="py-20 px-6 mb-20">
-        <div class="max-w-4xl mx-auto">
-            <div class="cta-section reveal">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6" style="font-family:'Fraunces',serif;">
-                    ¿Hablamos sobre tu idea?
-                </h2>
-                <p class="text-amber-200 mb-10 max-w-xl mx-auto text-lg">
-                    No será una llamada de ventas. Será una charla entre personas para ver si encajamos.
-                </p>
-                <button
-                    class="bg-white font-semibold px-10 py-5 rounded-xl text-lg transition hover:bg-amber-50 hover:-translate-y-1"
-                    style="color:var(--theme-deep);box-shadow:0 8px 24px rgba(0,0,0,0.2);">
-                    Agendar charla gratuita
-                </button>
+            <div class="glass-card p-4 lg:p-8">
+                <img src="img/web_silvina_3.png" class="w-full rounded-xl shadow-2xl" alt="Web Silvina">
             </div>
         </div>
     </section>
 
-    <!-- ══════════════ FOOTER ══════════════ -->
-    <footer class="py-20 px-6">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-12 mb-12">
+    <!-- FAQ -->
+    <section class="py-40 px-6 bg-slate-900/50">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-20">Preguntas frecuentes</h2>
+
+            <div class="space-y-4">
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        ¿La web es mía?
+                        <svg class="chevron w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="leading-relaxed">Sí, es completamente tuya. Una vez finalizado el desarrollo, tenés el control total sobre tu sitio, contenido y propiedad digital.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        ¿Cuánto tarda?
+                        <svg class="chevron w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="leading-relaxed">En pocos días (generalmente entre 5 y 10 días hábiles) podés tenerla funcionando. La rapidez es uno de nuestros pilares para que no postergues más tu lanzamiento.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        ¿Es un pago único?
+                        <svg class="chevron w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="leading-relaxed">Sí, pagás por el diseño y desarrollo inicial. Los únicos costos recurrentes son el dominio y hosting, que son externos (te guío para que elijas los más económicos y confiables).</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        ¿Puedo hacer cambios?
+                        <svg class="chevron w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="leading-relaxed">¡Claro! La web está diseñada para ser escalable y autogestionable. Te entrego el sitio optimizado para que puedas actualizar contenido fácilmente.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        No sé nada de tecnología
+                        <svg class="chevron w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="leading-relaxed">Perfecto. Está pensado para eso. Mi trabajo es que vos te enfoques en tu negocio mientras yo resuelvo toda la complejidad técnica por vos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="py-48 text-center px-6 relative">
+        <div class="absolute inset-0 bg-teal-500/5 blur-3xl -z-10"></div>
+        <h2 class="text-5xl md:text-7xl font-bold mb-12 max-w-5xl mx-auto leading-tight">
+            Podés seguir pensándolo… <br><span class="text-gradient">o tenerlo funcionando</span>
+        </h2>
+        <button class="btn text-xl px-16 py-6">Agendar llamada ahora</button>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-24 px-6 border-t border-teal-500/10">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-16 mb-20">
 
             <div>
-                <h3 class="font-bold text-lg mb-3" style="font-family:'Fraunces',serif;">Diego Javier Soto</h3>
-                <p class="text-gray-400 text-sm mb-4 max-w-xs">
-                    Ayudo a profesionales del bienestar a transformar su idea en una presencia online clara, simple y
-                    real.
+                <h3 class="font-bold text-2xl mb-6 text-gradient">PuntoCero</h3>
+                <p class="text-muted text-sm mb-6 leading-relaxed">
+                    Transformando ideas en lanzamientos digitales claros, rápidos y profesionales. Sin complicaciones técnicas.
                 </p>
-                <p class="text-sm italic" style="color:var(--theme-mid);">"Sin complicaciones, solo presencia real."</p>
+                <p class="text-sm italic text-teal-400">"De la idea a la realidad."</p>
             </div>
 
             <div>
-                <h4 class="font-semibold mb-4 text-gray-300">Contacto</h4>
-                <div class="space-y-2 text-gray-400 text-sm">
-                    <p>📩 diego@email.com</p>
-                    <p>📱 +54 9 223 XXX XXXX</p>
-                    <p>📍 Mar del Plata, Argentina</p>
+                <h4 class="font-bold mb-6 text-slate-200">Contacto</h4>
+                <div class="space-y-4 text-muted text-sm">
+                    <p class="flex items-center gap-3"><span>📩</span> diego@email.com</p>
+                    <p class="flex items-center gap-3"><span>📱</span> +54 9 223 XXX XXXX</p>
+                    <p class="flex items-center gap-3"><span>📍</span> Mar del Plata, Argentina</p>
                 </div>
             </div>
 
             <div>
-                <h4 class="font-semibold mb-4 text-gray-300">Conectemos</h4>
-                <div class="flex flex-col gap-3 text-sm text-gray-400">
-                    <a href="#" class="transition hover:text-amber-400">LinkedIn</a>
-                    <a href="#" class="transition hover:text-amber-400">Instagram</a>
-                    <a href="#" class="transition hover:text-amber-400">Agendar sesión</a>
+                <h4 class="font-bold mb-6 text-slate-200">Conectemos</h4>
+                <div class="flex flex-col gap-4 text-sm text-muted">
+                    <a href="#" class="transition hover:text-teal-400">LinkedIn</a>
+                    <a href="#" class="transition hover:text-teal-400">Instagram</a>
+                    <a href="#" class="transition hover:text-teal-400 font-bold text-teal-500">Agendar sesión</a>
                 </div>
             </div>
 
         </div>
 
-        <div class="border-t border-gray-800 pt-8 text-center text-gray-600 text-sm">
-            © 2026 Diego Javier Soto — Hecho con intención.
+        <div class="pt-10 text-center text-slate-500 text-xs border-t border-slate-800/50">
+            © 2026 PuntoCero — Lanzamientos Digitales · Hecho con intención.
         </div>
     </footer>
 
-    <!-- ══════════════ SCROLL REVEAL SCRIPT ══════════════ -->
     <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.12 });
-
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-        // ══════════════ DARK MODE LOGIC ══════════════
+        // ══════════════ THEME LOGIC ══════════════
         const themeToggle = document.getElementById('theme-toggle');
         const htmlElement = document.documentElement;
+        const logoImg = document.getElementById('logo-img');
 
-        // Check for saved theme
+        function updateLogo(isLight) {
+            logoImg.src = isLight ? 'img/punto_cero_tranparente.png' : 'img/punto_cero_tranparente_blanco.png';
+        }
+
+        // Neo-Digital is Dark by default. "Light mode" is the exception.
         const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) {
-            htmlElement.classList.toggle('dark-mode', savedTheme === 'dark');
-        } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            // Apply system preference if no saved theme
-            htmlElement.classList.add('dark-mode');
+        if (savedTheme === 'light') {
+            htmlElement.classList.add('light-mode');
+            updateLogo(true);
+        } else {
+            updateLogo(false);
         }
 
         themeToggle.addEventListener('click', () => {
-            const isDarkMode = htmlElement.classList.toggle('dark-mode');
-            localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+            const isLight = htmlElement.classList.toggle('light-mode');
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+            updateLogo(isLight);
+        });
+
+        // ══════════════ ACCORDION LOGIC ══════════════
+        document.querySelectorAll('.accordion-header').forEach(button => {
+            button.addEventListener('click', () => {
+                const accordionItem = button.parentElement;
+                const isOpen = accordionItem.classList.contains('active');
+                
+                document.querySelectorAll('.accordion-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+
+                if (!isOpen) {
+                    accordionItem.classList.add('active');
+                }
+            });
         });
     </script>
 

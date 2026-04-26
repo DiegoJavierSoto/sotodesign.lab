@@ -5,12 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PuntoCero | Lanzamientos digitales</title>
+    <link rel="icon" type="image/png" href="img/favicon.png">
 
     <!-- Open Graph / WhatsApp / Facebook / LinkedIn -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Puento Cero . Diego Soto">
-    <meta property="og:description"
-        content="Ayudo a profesionales a simplificar el caos tecnológico para que puedan enfocarse en lo que mejor saben hacer">
+    <meta property="og:description" content="Ayudo a profesionales a simplificar a simplificar 
+        la transición al mundo digital 
+        para que puedan enfocarse en lo que mejor saben hacer">
     <meta property="og:image"
         content="https://github.com/DiegoJavierSoto/sotodesign.lab/blob/main/img/banner.png?raw=true">
     <meta property="og:url" content="https://puntocerodigital.netlify.app/">
@@ -23,6 +25,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         :root {
             /* Neo-Digital Midnight Palette */
             --theme-deep: #2dd4bf;
@@ -43,18 +49,7 @@
             --glass-border: rgba(45, 212, 191, 0.1);
         }
 
-        .light-mode {
-            /* Optional Light Mode for Neo-Digital (more like a "Paper" mode) */
-            --theme-deep: #0d9488;
-            --theme-mid: #4f46e5;
-            --theme-light: #f1f5f9;
-            --theme-pale: #ffffff;
-            --text-dark: #0f172a;
-            --bg-card: rgba(255, 255, 255, 0.8);
-            --nav-bg: rgba(255, 255, 255, 0.8);
-            --text-muted: #64748b;
-            --glass-border: rgba(13, 148, 136, 0.1);
-        }
+
 
         body {
             font-family: 'DM Sans', sans-serif;
@@ -111,6 +106,13 @@
             border: 1px solid var(--glass-border);
             border-radius: 24px;
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(45, 212, 191, 0.4);
+            background: rgba(30, 41, 59, 0.9);
         }
 
         nav {
@@ -121,48 +123,6 @@
             transition: var(--transition);
         }
 
-        /* Dark Mode Toggle (Reversed for Neo-Digital Default Dark) */
-        .theme-toggle {
-            cursor: pointer;
-            padding: 10px;
-            border-radius: 12px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--glass-border);
-            color: var(--theme-deep);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-        }
-
-        .theme-toggle:hover {
-            background: rgba(45, 212, 191, 0.1);
-            transform: translateY(-2px);
-        }
-
-        .theme-toggle svg {
-            width: 20px;
-            height: 20px;
-            fill: none;
-            stroke: currentColor;
-            stroke-width: 2;
-        }
-
-        .sun-icon {
-            display: block;
-        }
-
-        .moon-icon {
-            display: none;
-        }
-
-        .light-mode .sun-icon {
-            display: none;
-        }
-
-        .light-mode .moon-icon {
-            display: block;
-        }
 
         /* FAQ Accordion */
         .accordion-item {
@@ -251,28 +211,16 @@
     <!-- NAV -->
     <nav class="fixed top-0 w-full z-50">
         <div class="max-w-6xl mx-auto px-6 py-3 flex justify-between items-center">
-            <div class="flex items-center">
+            <a href="#" class="flex items-center">
                 <img id="logo-img" src="img/punto_cero_tranparente_blanco.png" alt="PuntoCero Logo">
-            </div>
+            </a>
 
             <div class="flex items-center gap-6">
-                <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
-                    <svg class="sun-icon" viewBox="0 0 24 24">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                    <svg class="moon-icon" viewBox="0 0 24 24">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                </button>
-                <button class="btn">Agendar llamada</button>
+
+                <a href="https://wa.me/5492236014471?text=Hola%20Diego,%20vengo%20desde%20tu%20web" target="_blank"
+                    class="btn">
+                    Contacto
+                </a>
             </div>
         </div>
     </nav>
@@ -282,10 +230,10 @@
         <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
 
             <div class="relative z-10">
-                <div
+                <!-- <div
                     class="inline-block px-4 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-400 text-sm font-bold mb-6">
                     Lanzamientos Digitales 2026
-                </div>
+                </div> -->
                 <h1 class="text-6xl font-bold mb-8 leading-tight">
                     De tu idea a <span class="text-gradient italic">algo real</span>, en pocos días
                 </h1>
@@ -296,8 +244,11 @@
                 </p>
 
                 <div class="flex flex-wrap gap-6">
-                    <button class="btn px-10 py-4 text-lg">Empezar mi web</button>
-                    <button class="btn-outline px-10 py-4 text-lg">Ver ejemplos</button>
+                    <a href="https://wa.me/5492236014471?text=Hola%20Diego,%20me%20gustaría%20empezar%20mi%20web"
+                        target="_blank" class="btn px-10 py-4 text-lg inline-block">
+                        Empezar mi web
+                    </a>
+                    <a href="#caso-real" class="btn-outline px-10 py-4 text-lg inline-block">Ver proceso</a>
                 </div>
             </div>
 
@@ -305,7 +256,7 @@
                 <div class="absolute -top-20 -right-20 w-80 h-80 bg-teal-500/10 rounded-full blur-3xl"></div>
                 <div class="absolute -bottom-20 -left-20 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl"></div>
                 <div class="glass-card p-4 relative z-10 float-anim">
-                    <img src="img/diego_escitorio.png" class="rounded-xl w-full shadow-2xl" alt="Diego Javier Soto">
+                    <img src="img/hero_mockup_2.png" class="rounded-xl w-full shadow-2xl" alt="Diego Javier Soto">
                 </div>
             </div>
 
@@ -318,21 +269,63 @@
             <h2 class="text-4xl font-bold mb-16 text-center">Si estás en esta situación…</h2>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="glass-card p-10 hover:border-teal-500/50 transition-colors">
-                    <div class="text-teal-400 text-4xl mb-6">“</div>
-                    <p class="text-lg italic text-slate-300">Tengo la idea pero no sé cómo llevarla a una web</p>
+                <div class="glass-card p-10 hover:border-teal-500/50 transition-colors relative overflow-hidden">
+                    <div class="text-teal-400 text-4xl mb-6 opacity-50">“</div>
+                    <p class="text-lg italic text-slate-300 mb-6">Tengo la idea pero no sé cómo llevarla a una web</p>
+                    <div class="text-teal-400 text-4xl text-right opacity-50">”</div>
                 </div>
-                <div class="glass-card p-10 hover:border-teal-500/50 transition-colors">
-                    <div class="text-teal-400 text-4xl mb-6">“</div>
-                    <p class="text-lg italic text-slate-300">Lo técnico me frena o me abruma</p>
+                <div class="glass-card p-10 hover:border-teal-500/50 transition-colors relative overflow-hidden">
+                    <div class="text-teal-400 text-4xl mb-6 opacity-50">“</div>
+                    <p class="text-lg italic text-slate-300 mb-6">Lo técnico me frena o me abruma</p>
+                    <div class="text-teal-400 text-4xl text-right opacity-50">”</div>
                 </div>
-                <div class="glass-card p-10 hover:border-teal-500/50 transition-colors">
-                    <div class="text-teal-400 text-4xl mb-6">“</div>
-                    <p class="text-lg italic text-slate-300">Dependo solo de Instagram o WhatsApp</p>
+                <div class="glass-card p-10 hover:border-teal-500/50 transition-colors relative overflow-hidden">
+                    <div class="text-teal-400 text-4xl mb-6 opacity-50">“</div>
+                    <p class="text-lg italic text-slate-300 mb-6">Dependo solo de Instagram o WhatsApp</p>
+                    <div class="text-teal-400 text-4xl text-right opacity-50">”</div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- EL SALTO -->
+
+    <section class="py-24 px-6 relative overflow-hidden">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center">Tu servicio, potenciado por la tecnología</h2>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="glass-card p-8 space-y-4">
+                    <div class="text-teal-400 text-2xl font-bold">01. Profesionalismo</div>
+                    <p class="text-slate-300 italic">Transmitís la confianza necesaria para que el consultante dé el
+                        primer
+                        paso. Tu web es tu carta de presentación 24/7.</p>
+                </div>
+                <div class="glass-card p-8 space-y-4">
+                    <div class="text-teal-400 text-2xl font-bold">02. Alcance</div>
+                    <p class="text-slate-300 italic">Derribás las fronteras geográficas. Tu consulta deja de ser local
+                        para
+                        volverse global a través de la atención online.</p>
+                </div>
+                <div class="glass-card p-8 space-y-4">
+                    <div class="text-teal-400 text-2xl font-bold">03. Claridad</div>
+                    <p class="text-slate-300 italic">Ahorrás horas de explicaciones. Tus procesos, valores y metodología
+                        quedan
+                        claros desde el primer clic.</p>
+                </div>
+                <div class="glass-card p-8 space-y-4">
+                    <div class="text-teal-400 text-2xl font-bold">04. Enfoque</div>
+                    <p class="text-slate-300 italic">Te olvidás de lidiar con lo técnico. Recuperás tiempo para lo que
+                        importa:
+                        acompañar a tus pacientes o clientes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
 
     <!-- SOLUCIÓN -->
     <section class="py-40 px-6 text-center relative">
@@ -342,8 +335,8 @@
             <p class="text-2xl text-muted mb-8 font-light">No necesitás aprender tecnología ni resolver mil detalles
                 técnicos.</p>
             <div class="h-1 w-20 bg-teal-500 mx-auto rounded-full mb-10"></div>
-            <p class="text-xl text-slate-200">Me encargo de diseñar y desarrollar una página clara, profesional y lista
-                para usar.</p>
+            <p class="text-xl text-slate-200">Diseño una plataforma que trabaja por vos, para que tu único
+                foco sea transformar la vida de las personas.</p>
         </div>
     </section>
 
@@ -382,14 +375,50 @@
     </section>
 
     <!-- CASO -->
-    <section class="py-40 px-6">
+    <section id="caso-real" class="py-40 px-6">
         <div class="max-w-5xl mx-auto text-center">
             <h2 class="text-4xl font-bold mb-12">Un caso real</h2>
-            <p class="text-xl text-muted mb-16 max-w-2xl mx-auto">En pocos días pasó de tener una idea desordenada a una
-                página lista para ofrecer su servicio online.</p>
+            <p class="text-xl text-muted mb-16 max-w-2xl mx-auto">
+                En pocos días, transformamos una idea de gran potencial
+                en una plataforma profesional lista para conectar con sus clientes.</p>
 
             <div class="glass-card p-4 lg:p-8">
-                <img src="img/web_silvina_3.png" class="w-full rounded-xl shadow-2xl" alt="Web Silvina">
+                <img src="img/web_silvina.png" class="w-full rounded-xl shadow-2xl" alt="Web Silvina">
+            </div>
+        </div>
+    </section>
+
+
+    <section id="sobre-mi" class="py-32 px-6">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div class="order-2 md:order-1">
+                <div class="glass-card p-2 relative">
+                    <img src="img/diego_escitorio.png" class="rounded-xl w-full" alt="Diego Soto - PuntoCero">
+                    <div
+                        class="absolute -bottom-6 -right-6 bg-teal-500 text-slate-950 p-6 rounded-2xl shadow-xl hidden md:block">
+                        <p class="font-bold text-xl">Diego Soto</p>
+                        <p class="text-sm opacity-80">Diseñador & Programador</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="order-1 md:order-2 space-y-8">
+                <h2 class="text-4xl font-bold leading-tight">
+                    Detrás de <span class="text-gradient">PuntoCero</span>
+                </h2>
+                <p class="text-xl text-muted leading-relaxed">
+                    Hola, soy Diego. Mi camino en el diseño y la tecnología me enseñó que lo más importante no es el
+                    código, sino la **claridad**.
+                </p>
+                <p class="text-lg text-slate-300 leading-relaxed">
+                    Ayudo a profesionales de la salud y el bienestar a cruzar la barrera técnica. Mi enfoque es
+                    artesanal: combino la estructura del código con la sensibilidad del diseño para que tu presencia
+                    online sea tan auténtica como tu consulta.
+                </p>
+                <div class="pt-4">
+                    <p class="italic text-teal-400 font-serif text-lg">"Simplificar lo complejo para que tu propósito
+                        sea el protagonista."</p>
+                </div>
             </div>
         </div>
     </section>
@@ -424,7 +453,7 @@
                     </button>
                     <div class="accordion-content">
                         <p class="leading-relaxed">En pocos días (generalmente entre 5 y 10 días hábiles) podés tenerla
-                            funcionando. La rapidez es uno de nuestros pilares para que no postergues más tu
+                            funcionando. La rapidez es uno de mis pilares para que no postergues más tu
                             lanzamiento.</p>
                     </div>
                 </div>
@@ -481,7 +510,10 @@
         <h2 class="text-5xl md:text-7xl font-bold mb-12 max-w-5xl mx-auto leading-tight">
             Podés seguir pensándolo… <br><span class="text-gradient">o tenerlo funcionando</span>
         </h2>
-        <button class="btn text-xl px-16 py-6">Agendar llamada ahora</button>
+        <a href="https://wa.me/5492236014471?text=Hola%20Diego,%20quiero%20agendar%20una%20llamada" target="_blank"
+            class="btn text-xl px-16 py-6 inline-block">
+            Agendar llamada
+        </a>
     </section>
 
     <!-- FOOTER -->
@@ -497,56 +529,29 @@
                 <p class="text-sm italic text-teal-400">"De la idea a la realidad."</p>
             </div>
 
-            <div>
-                <h4 class="font-bold mb-6 text-slate-200">Contacto</h4>
-                <div class="space-y-4 text-muted text-sm">
-                    <p class="flex items-center gap-3"><span>📩</span> diego@email.com</p>
-                    <p class="flex items-center gap-3"><span>📱</span> +54 9 223 XXX XXXX</p>
-                    <p class="flex items-center gap-3"><span>📍</span> Mar del Plata, Argentina</p>
-                </div>
-            </div>
+            <div></div>
+
 
             <div>
                 <h4 class="font-bold mb-6 text-slate-200">Conectemos</h4>
                 <div class="flex flex-col gap-4 text-sm text-muted">
-                    <a href="#" class="transition hover:text-teal-400">LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/diegojaviersoto/"
+                        class="transition hover:text-teal-400">LinkedIn</a>
                     <a href="#" class="transition hover:text-teal-400">Instagram</a>
-                    <a href="#" class="transition hover:text-teal-400 font-bold text-teal-500">Agendar sesión</a>
+                    <a href="mailto:diegosoto.mdp@gmail.com" class="transition hover:text-teal-400">
+                        Enviar correo
+                    </a>
                 </div>
             </div>
 
         </div>
 
         <div class="pt-10 text-center text-slate-500 text-xs border-t border-slate-800/50">
-            © 2026 PuntoCero — Lanzamientos Digitales · Hecho con intención.
+            © 2026 PuntoCero x Diego Soto · Hecho con intención.
         </div>
     </footer>
 
     <script>
-        // ══════════════ THEME LOGIC ══════════════
-        const themeToggle = document.getElementById('theme-toggle');
-        const htmlElement = document.documentElement;
-        const logoImg = document.getElementById('logo-img');
-
-        function updateLogo(isLight) {
-            logoImg.src = isLight ? 'img/punto_cero_tranparente.png' : 'img/punto_cero_tranparente_blanco.png';
-        }
-
-        // Neo-Digital is Dark by default. "Light mode" is the exception.
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'light') {
-            htmlElement.classList.add('light-mode');
-            updateLogo(true);
-        } else {
-            updateLogo(false);
-        }
-
-        themeToggle.addEventListener('click', () => {
-            const isLight = htmlElement.classList.toggle('light-mode');
-            localStorage.setItem('theme', isLight ? 'light' : 'dark');
-            updateLogo(isLight);
-        });
-
         // ══════════════ ACCORDION LOGIC ══════════════
         document.querySelectorAll('.accordion-header').forEach(button => {
             button.addEventListener('click', () => {

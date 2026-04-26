@@ -6,6 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PuntoCero | Lanzamientos digitales</title>
 
+    <!-- Open Graph / WhatsApp / Facebook / LinkedIn -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Puento Cero . Diego Soto">
+    <meta property="og:description"
+        content="Ayudo a profesionales a simplificar el caos tecnológico para que puedan enfocarse en lo que mejor sabes hacer">
+    <meta property="og:image"
+        content="https://github.com/DiegoJavierSoto/sotodesign.lab/blob/main/img/banner.png?raw=true">
+    <meta property="og:url" content="https://puntocerodigital.netlify.app/">
+
+
+
     <link
         href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=DM+Sans:wght@400;500;600&display=swap"
         rel="stylesheet">
@@ -14,12 +25,18 @@
     <style>
         :root {
             /* Neo-Digital Midnight Palette */
-            --theme-deep: #2dd4bf; /* Electric Teal */
-            --theme-mid: #818cf8;  /* Soft Violet */
-            --theme-light: #1e293b; /* Deep Navy */
-            --theme-pale: #0f172a;  /* Midnight Background */
-            --text-dark: #f1f5f9;  /* Off-white text */
-            --bg-card: rgba(30, 41, 59, 0.7); /* Translucent Navy */
+            --theme-deep: #2dd4bf;
+            /* Electric Teal */
+            --theme-mid: #818cf8;
+            /* Soft Violet */
+            --theme-light: #1e293b;
+            /* Deep Navy */
+            --theme-pale: #0f172a;
+            /* Midnight Background */
+            --text-dark: #f1f5f9;
+            /* Off-white text */
+            --bg-card: rgba(30, 41, 59, 0.7);
+            /* Translucent Navy */
             --nav-bg: rgba(15, 23, 42, 0.8);
             --text-muted: #94a3b8;
             --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -44,7 +61,7 @@
             background-color: var(--theme-pale);
             color: var(--text-dark);
             transition: background-color 0.5s ease, color 0.5s ease;
-            background-image: 
+            background-image:
                 radial-gradient(circle at 10% 20%, rgba(45, 212, 191, 0.05) 0%, transparent 40%),
                 radial-gradient(circle at 90% 80%, rgba(129, 140, 248, 0.05) 0%, transparent 40%);
             background-attachment: fixed;
@@ -131,11 +148,21 @@
             stroke-width: 2;
         }
 
-        .sun-icon { display: block; }
-        .moon-icon { display: none; }
+        .sun-icon {
+            display: block;
+        }
 
-        .light-mode .sun-icon { display: none; }
-        .light-mode .moon-icon { display: block; }
+        .moon-icon {
+            display: none;
+        }
+
+        .light-mode .sun-icon {
+            display: none;
+        }
+
+        .light-mode .moon-icon {
+            display: block;
+        }
 
         /* FAQ Accordion */
         .accordion-item {
@@ -183,7 +210,9 @@
             color: var(--theme-deep);
         }
 
-        .chevron { transition: transform 0.3s ease; }
+        .chevron {
+            transition: transform 0.3s ease;
+        }
 
         #logo-img {
             height: 52px;
@@ -192,9 +221,17 @@
 
         /* Animations */
         @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
         }
 
         .float-anim {
@@ -217,7 +254,7 @@
             <div class="flex items-center">
                 <img id="logo-img" src="img/punto_cero_tranparente_blanco.png" alt="PuntoCero Logo">
             </div>
-            
+
             <div class="flex items-center gap-6">
                 <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
                     <svg class="sun-icon" viewBox="0 0 24 24">
@@ -245,7 +282,8 @@
         <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
 
             <div class="relative z-10">
-                <div class="inline-block px-4 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-400 text-sm font-bold mb-6">
+                <div
+                    class="inline-block px-4 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-400 text-sm font-bold mb-6">
                     Lanzamientos Digitales 2026
                 </div>
                 <h1 class="text-6xl font-bold mb-8 leading-tight">
@@ -253,7 +291,8 @@
                 </h1>
 
                 <p class="text-xl text-muted mb-10 max-w-md leading-relaxed">
-                    Diseño y desarrollo páginas web claras y efectivas para que puedas ofrecer tus servicios online sin depender de lo técnico.
+                    Diseño y desarrollo páginas web claras y efectivas para que puedas ofrecer tus servicios online sin
+                    depender de lo técnico.
                 </p>
 
                 <div class="flex flex-wrap gap-6">
@@ -298,10 +337,13 @@
     <!-- SOLUCIÓN -->
     <section class="py-40 px-6 text-center relative">
         <div class="max-w-3xl mx-auto">
-            <h2 class="text-5xl font-bold mb-10 leading-tight">Una forma <span class="text-teal-400">simple</span> de lanzar tu web</h2>
-            <p class="text-2xl text-muted mb-8 font-light">No necesitás aprender tecnología ni resolver mil detalles técnicos.</p>
+            <h2 class="text-5xl font-bold mb-10 leading-tight">Una forma <span class="text-teal-400">simple</span> de
+                lanzar tu web</h2>
+            <p class="text-2xl text-muted mb-8 font-light">No necesitás aprender tecnología ni resolver mil detalles
+                técnicos.</p>
             <div class="h-1 w-20 bg-teal-500 mx-auto rounded-full mb-10"></div>
-            <p class="text-xl text-slate-200">Me encargo de diseñar y desarrollar una página clara, profesional y lista para usar.</p>
+            <p class="text-xl text-slate-200">Me encargo de diseñar y desarrollar una página clara, profesional y lista
+                para usar.</p>
         </div>
     </section>
 
@@ -312,19 +354,27 @@
 
             <div class="grid md:grid-cols-4 gap-12">
                 <div class="space-y-6 group">
-                    <div class="w-16 h-16 bg-teal-500/10 border border-teal-500/30 text-teal-400 rounded-2xl flex items-center justify-center mx-auto text-2xl font-black group-hover:bg-teal-500 group-hover:text-slate-950 transition-all duration-500">1</div>
+                    <div
+                        class="w-16 h-16 bg-teal-500/10 border border-teal-500/30 text-teal-400 rounded-2xl flex items-center justify-center mx-auto text-2xl font-black group-hover:bg-teal-500 group-hover:text-slate-950 transition-all duration-500">
+                        1</div>
                     <p class="font-bold text-lg">Entendemos tu idea</p>
                 </div>
                 <div class="space-y-6 group">
-                    <div class="w-16 h-16 bg-teal-500/10 border border-teal-500/30 text-teal-400 rounded-2xl flex items-center justify-center mx-auto text-2xl font-black group-hover:bg-teal-500 group-hover:text-slate-950 transition-all duration-500">2</div>
+                    <div
+                        class="w-16 h-16 bg-teal-500/10 border border-teal-500/30 text-teal-400 rounded-2xl flex items-center justify-center mx-auto text-2xl font-black group-hover:bg-teal-500 group-hover:text-slate-950 transition-all duration-500">
+                        2</div>
                     <p class="font-bold text-lg">Definimos estructura</p>
                 </div>
                 <div class="space-y-6 group">
-                    <div class="w-16 h-16 bg-teal-500/10 border border-teal-500/30 text-teal-400 rounded-2xl flex items-center justify-center mx-auto text-2xl font-black group-hover:bg-teal-500 group-hover:text-slate-950 transition-all duration-500">3</div>
+                    <div
+                        class="w-16 h-16 bg-teal-500/10 border border-teal-500/30 text-teal-400 rounded-2xl flex items-center justify-center mx-auto text-2xl font-black group-hover:bg-teal-500 group-hover:text-slate-950 transition-all duration-500">
+                        3</div>
                     <p class="font-bold text-lg">Diseño y desarrollo</p>
                 </div>
                 <div class="space-y-6 group">
-                    <div class="w-16 h-16 bg-teal-500/10 border border-teal-500/30 text-teal-400 rounded-2xl flex items-center justify-center mx-auto text-2xl font-black group-hover:bg-teal-500 group-hover:text-slate-950 transition-all duration-500">4</div>
+                    <div
+                        class="w-16 h-16 bg-teal-500/10 border border-teal-500/30 text-teal-400 rounded-2xl flex items-center justify-center mx-auto text-2xl font-black group-hover:bg-teal-500 group-hover:text-slate-950 transition-all duration-500">
+                        4</div>
                     <p class="font-bold text-lg">Publicación</p>
                 </div>
             </div>
@@ -335,7 +385,8 @@
     <section class="py-40 px-6">
         <div class="max-w-5xl mx-auto text-center">
             <h2 class="text-4xl font-bold mb-12">Un caso real</h2>
-            <p class="text-xl text-muted mb-16 max-w-2xl mx-auto">En pocos días pasó de tener una idea desordenada a una página lista para ofrecer su servicio online.</p>
+            <p class="text-xl text-muted mb-16 max-w-2xl mx-auto">En pocos días pasó de tener una idea desordenada a una
+                página lista para ofrecer su servicio online.</p>
 
             <div class="glass-card p-4 lg:p-8">
                 <img src="img/web_silvina_3.png" class="w-full rounded-xl shadow-2xl" alt="Web Silvina">
@@ -352,50 +403,72 @@
                 <div class="accordion-item">
                     <button class="accordion-header">
                         ¿La web es mía?
-                        <svg class="chevron w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        <svg class="chevron w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
                     </button>
                     <div class="accordion-content">
-                        <p class="leading-relaxed">Sí, es completamente tuya. Una vez finalizado el desarrollo, tenés el control total sobre tu sitio, contenido y propiedad digital.</p>
+                        <p class="leading-relaxed">Sí, es completamente tuya. Una vez finalizado el desarrollo, tenés el
+                            control total sobre tu sitio, contenido y propiedad digital.</p>
                     </div>
                 </div>
 
                 <div class="accordion-item">
                     <button class="accordion-header">
                         ¿Cuánto tarda?
-                        <svg class="chevron w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        <svg class="chevron w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
                     </button>
                     <div class="accordion-content">
-                        <p class="leading-relaxed">En pocos días (generalmente entre 5 y 10 días hábiles) podés tenerla funcionando. La rapidez es uno de nuestros pilares para que no postergues más tu lanzamiento.</p>
+                        <p class="leading-relaxed">En pocos días (generalmente entre 5 y 10 días hábiles) podés tenerla
+                            funcionando. La rapidez es uno de nuestros pilares para que no postergues más tu
+                            lanzamiento.</p>
                     </div>
                 </div>
 
                 <div class="accordion-item">
                     <button class="accordion-header">
                         ¿Es un pago único?
-                        <svg class="chevron w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        <svg class="chevron w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
                     </button>
                     <div class="accordion-content">
-                        <p class="leading-relaxed">Sí, pagás por el diseño y desarrollo inicial. Los únicos costos recurrentes son el dominio y hosting, que son externos (te guío para que elijas los más económicos y confiables).</p>
+                        <p class="leading-relaxed">Sí, pagás por el diseño y desarrollo inicial. Los únicos costos
+                            recurrentes son el dominio y hosting, que son externos (te guío para que elijas los más
+                            económicos y confiables).</p>
                     </div>
                 </div>
 
                 <div class="accordion-item">
                     <button class="accordion-header">
                         ¿Puedo hacer cambios?
-                        <svg class="chevron w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        <svg class="chevron w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
                     </button>
                     <div class="accordion-content">
-                        <p class="leading-relaxed">¡Claro! La web está diseñada para ser escalable y autogestionable. Te entrego el sitio optimizado para que puedas actualizar contenido fácilmente.</p>
+                        <p class="leading-relaxed">¡Claro! La web está diseñada para ser escalable y autogestionable. Te
+                            entrego el sitio optimizado para que puedas actualizar contenido fácilmente.</p>
                     </div>
                 </div>
 
                 <div class="accordion-item">
                     <button class="accordion-header">
                         No sé nada de tecnología
-                        <svg class="chevron w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        <svg class="chevron w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
                     </button>
                     <div class="accordion-content">
-                        <p class="leading-relaxed">Perfecto. Está pensado para eso. Mi trabajo es que vos te enfoques en tu negocio mientras yo resuelvo toda la complejidad técnica por vos.</p>
+                        <p class="leading-relaxed">Perfecto. Está pensado para eso. Mi trabajo es que vos te enfoques en
+                            tu negocio mientras yo resuelvo toda la complejidad técnica por vos.</p>
                     </div>
                 </div>
             </div>
@@ -418,7 +491,8 @@
             <div>
                 <h3 class="font-bold text-2xl mb-6 text-gradient">PuntoCero</h3>
                 <p class="text-muted text-sm mb-6 leading-relaxed">
-                    Transformando ideas en lanzamientos digitales claros, rápidos y profesionales. Sin complicaciones técnicas.
+                    Transformando ideas en lanzamientos digitales claros, rápidos y profesionales. Sin complicaciones
+                    técnicas.
                 </p>
                 <p class="text-sm italic text-teal-400">"De la idea a la realidad."</p>
             </div>
@@ -478,7 +552,7 @@
             button.addEventListener('click', () => {
                 const accordionItem = button.parentElement;
                 const isOpen = accordionItem.classList.contains('active');
-                
+
                 document.querySelectorAll('.accordion-item').forEach(item => {
                     item.classList.remove('active');
                 });
